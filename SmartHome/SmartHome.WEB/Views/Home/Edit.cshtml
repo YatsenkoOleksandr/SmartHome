@@ -1,0 +1,18 @@
+﻿@using SmartHome.Services.DTO
+@model DeviceDTO
+
+@foreach(SwitchDTO switchDTO in Model.SwitchDTOs)
+{
+    @Html.Partial("_EditSwitchPartial", switchDTO)
+}
+
+@foreach(RegulatorDTO regulatorDTO in Model.RegulatorDTOs)
+{
+    @Html.Partial("_EditRegulatorPartial", regulatorDTO)
+}
+
+@foreach(ChannelRegulatorDTO channelRegulatorDTO in Model.ChannelRegulatorDTOs)
+{
+    @Html.Partial("_EditChannelRegulatorPartial", channelRegulatorDTO)
+}
+

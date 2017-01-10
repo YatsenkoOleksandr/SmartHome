@@ -1,0 +1,13 @@
+﻿@using SmartHome.Services.DTO
+@model SwitchDTO
+
+@using (Html.BeginForm("Edit", "Switch"))
+{
+    <input id="Id" value="@Model.Id" name="Id" type="hidden" /> 
+    @Html.HiddenFor(Model => Model.DeviceId)
+    <p>@Html.DisplayFor(Model => Model.Name)</p>
+    
+    <p>@Html.EditorFor(Model => Model.IsSwitchOn)</p>
+
+    <input type="submit" value="Изменить" />
+}

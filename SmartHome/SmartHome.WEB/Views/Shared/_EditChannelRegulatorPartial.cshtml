@@ -1,0 +1,14 @@
+﻿@using SmartHome.Services.DTO
+@model ChannelRegulatorDTO
+
+@using (Html.BeginForm("Edit", "ChannelRegulator"))
+{
+    <input id="Id" value="@Model.Id" name="Id" type="hidden" />
+    @Html.HiddenFor(Model => Model.DeviceId)
+    @Html.DisplayFor(Model => Model.Name)
+    <p>@Html.DropDownListFor(Model => Model.Current, 
+      new SelectList(Model.ChannelDTOs, "Id", "Name", Model.Current.Id))</p>
+    
+
+    <input type="submit" value="Изменить" />
+}

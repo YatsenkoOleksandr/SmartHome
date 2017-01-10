@@ -1,0 +1,27 @@
+﻿@using SmartHome.Services.DTO
+@model IEnumerable<DeviceInfoDTO>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table id="DeviceTable">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(DeviceInfoDTO item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@Html.ActionLink("Управление устройством", "Edit", "Home", new { Id = item.Id}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
