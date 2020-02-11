@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome.EFStorage.EFRepository
 {
-    public class EFUnitOfWork : IUnitOfWork
+    public sealed class EFUnitOfWork : IUnitOfWork
     {
         private SmartHomeContext dbContext;
 
@@ -30,7 +30,7 @@ namespace SmartHome.EFStorage.EFRepository
         
         private bool disposedValue = false; 
 
-        protected virtual void Dispose(bool disposing)
+        private void Dispose(bool disposing)
         {
             if (!disposedValue)
             {

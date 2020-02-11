@@ -22,7 +22,7 @@ namespace SmartHome.WEB.Controllers
             return View(deviceService.GetBaseDevices());
         }
 
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             DeviceDTO device = deviceService.Get((int)id);
             return View(device);
